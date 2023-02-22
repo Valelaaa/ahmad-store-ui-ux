@@ -14,16 +14,37 @@
         </div>
       </div>
     </div>
-    <b-navbar toggleable = "lg" type = "dark" class = "bg-white" variant = "info">
-
-    </b-navbar>
+      <div class = "row">
+      <b-navbar toggleable = "lg" type = "dark" class = "bg-white" variant = "info">
+        <b-navbar-brand href = "#">
+          <IconLogo />
+        </b-navbar-brand>
+        <a class = "all-categories" href = "#">
+          <HamburgerMenu />
+          <span class = "categories">ВСЕ КАТЕГОРИИ</span>
+        </a>
+        <b-form-input type = "search" class = "col-3"></b-form-input>
+        <div class = "d-flex">
+          <IconUser/>
+          <IconHeart/>
+          <IconShoppingBag/>
+        </div>
+      </b-navbar>
+    </div>
   </header>
 </template>
 
 
 <script>
+import IconLogo from "@/icons/IconLogo.vue";
+import HamburgerMenu from "@/icons/HamburgerMenu.vue";
+import IconHeart from "@/icons/IconHeart.vue";
+import IconShoppingBag from "@/icons/IconShoppingBag.vue";
+import IconUser from "@/icons/IconUser.vue";
+
 export default {
   name: 'HeaderContent',
+  components: {IconUser, IconShoppingBag, IconHeart, HamburgerMenu, IconLogo},
 
 }
 </script>
@@ -77,5 +98,21 @@ export default {
   background: rgba(0, 0, 0, .3);
   border-radius: 4px;
 }
+.all-categories {
+  text-decoration: none;
+  color: black;
+}
 
+.categories {
+  font-family: 'Roboto', sans-serif;
+  padding-left: 10px;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16.8008px;
+  line-height: 20px;
+  /* identical to box height */
+  letter-spacing: 0.068em;
+
+  color: #000000;
+}
 </style>
