@@ -4,7 +4,7 @@
 
 <script>
 
-import Header from "@/components/Header";
+import Header from "@/components/HeaderContent";
 export default {
   name: 'App',
   components: {Header},
