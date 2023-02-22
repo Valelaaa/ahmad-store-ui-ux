@@ -5,32 +5,36 @@
       <div class = "col-lg-2 offset-6 phone">+373 22 155 155
         <b-icon icon = "chevron-down"></b-icon>
       </div>
-      <div class = "col-lg-1 language">
-        <div class = "language-ro">
-          RO
-        </div>
-        <div class = "language-ru">
-          RU
+      <div class = "col-lg-1">
+        <div class="language">
+          <div class = "language-ro">
+            RO
+          </div>
+          <div class = "language-ru">
+            RU
+          </div>
         </div>
       </div>
     </div>
-      <div class = "row">
-      <b-navbar toggleable = "lg" type = "dark" class = "bg-white" variant = "info">
-        <b-navbar-brand href = "#">
-          <IconLogo />
-        </b-navbar-brand>
-        <a class = "all-categories" href = "#">
-          <HamburgerMenu />
-          <span class = "categories">ВСЕ КАТЕГОРИИ</span>
-        </a>
-        <b-form-input type = "search" class = "col-3"></b-form-input>
-        <div class = "d-flex">
-          <IconUser/>
-          <IconHeart/>
-          <IconShoppingBag/>
-        </div>
-      </b-navbar>
-    </div>
+    <b-navbar toggleable = "lg" type = "dark" class = "bg-white row" variant = "info">
+      <b-navbar-brand href = "#">
+        <IconLogo/>
+      </b-navbar-brand>
+
+      <a class = "all-categories" href = "#">
+        <HamburgerMenu/>
+        <span class = "categories">ВСЕ КАТЕГОРИИ</span>
+      </a>
+
+      <b-form-input type = "search" class = "col-3"></b-form-input>
+
+      <div class = "d-flex">
+        <IconUser/>
+        <IconHeart/>
+        <IconShoppingBag/>
+      </div>
+
+    </b-navbar>
   </header>
 </template>
 
@@ -83,21 +87,27 @@ export default {
 
 .language {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   font-weight: 600;
   font-size: 14px;
   color: #000000;
   background: rgba(0, 0, 0, .1);
-  border-radius: 4px;
+  border-radius: 5px;
   width: 50px;
 }
 
 .language-ru {
-  width: 20px;
+  width: 25px;
   color: #000000;
   background: rgba(0, 0, 0, .3);
   border-radius: 4px;
+  text-align: center;
 }
+.language-ro {
+  width: 25px;
+  text-align: center;
+}
+
 .all-categories {
   text-decoration: none;
   color: black;
@@ -108,7 +118,7 @@ export default {
   padding-left: 10px;
   font-style: normal;
   font-weight: 600;
-  font-size: 16.8008px;
+  font-size: 16px;
   line-height: 20px;
   /* identical to box height */
   letter-spacing: 0.068em;
