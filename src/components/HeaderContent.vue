@@ -16,25 +16,34 @@
         </div>
       </div>
     </div>
-    <b-navbar toggleable = "lg" type = "dark" class = "bg-white row" variant = "info">
-      <b-navbar-brand href = "#">
-        <IconLogo/>
-      </b-navbar-brand>
+          <b-navbar toggleable = "lg" type = "dark" class = "bg-white row" variant = "info">
+        <div class = "col-lg-1 col-md-2 ml-5">
 
-      <a class = "all-categories" href = "#">
-        <HamburgerMenu/>
-        <span class = "categories">ВСЕ КАТЕГОРИИ</span>
-      </a>
-
-      <b-form-input type = "search" class = "col-3"></b-form-input>
-
-      <div class = "d-flex">
-        <IconUser/>
-        <IconHeart/>
-        <IconShoppingBag/>
-      </div>
-
-    </b-navbar>
+            <b-navbar-brand href = "#">
+              <IconLogo />
+            </b-navbar-brand>
+        </div>
+            <div class = "col-lg-2 col-md-2 col-sm-2">
+          <a class = "all-categories" href = "#">
+              <HamburgerMenu />
+              <span class = "categories">ВСЕ КАТЕГОРИИ</span>
+            </a>
+              </div>
+            <div class = "col-lg-6 col-md-5">
+            <b-form-input type = "search"></b-form-input>
+              </div>
+            <div class = "d-flex col offset-1">
+              <a class="navbar-items">
+              <IconUser/>
+              </a>
+              <a class="navbar-items">
+                <IconHeart/>
+              </a>
+              <a class="navbar-items">
+                <IconShoppingBag/>
+              </a>
+            </div>
+          </b-navbar>
   </header>
 </template>
 
@@ -70,6 +79,7 @@ export default {
 }
 
 .address {
+  font-family: 'Roboto', sans-serif;
   font-weight: 600;
   font-size: 12px;
   line-height: 15px;
@@ -78,6 +88,7 @@ export default {
 }
 
 .phone {
+  font-family: 'Roboto', sans-serif;
   font-weight: 600;
   font-size: 14px;
   line-height: 17px;
@@ -86,6 +97,7 @@ export default {
 }
 
 .language {
+  font-family: 'Roboto', sans-serif;
   display: flex;
   justify-content: space-between;
   font-weight: 600;
@@ -124,5 +136,8 @@ export default {
   letter-spacing: 0.068em;
 
   color: #000000;
+}
+.navbar-items{
+  margin-left:35px;
 }
 </style>
