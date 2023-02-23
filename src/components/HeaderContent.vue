@@ -1,16 +1,28 @@
 <template>
   <header class = "header container">
     <div class = "info row">
-      <div class = "col-lg-3 address">КОДРИЛОР 16, МУН. КИШИНЁВ</div>
-      <div class = "col-lg-2 offset-6 phone">+373 22 155 155
-        <b-icon icon = "chevron-down"></b-icon>
+      <div class = "col-lg-3 col-md-4 col-sm-5 address">КОДРИЛОР 16, МУН. КИШИНЁВ</div>
+      <div class = "col-lg-3 offset-lg-5 col-md-4 offset-md-2 col-sm-4 offset-sm-1 phone">
+        <p>+373 22 155 155
+          <b-icon role = 'button' icon = "chevron-down" @click = "toggleElement"></b-icon>
+        </p>
+        <div class = "phone-active" v-if = "isElVisible">
+          <p>+373 22 155 155
+            <b-icon role = 'button' icon = "chevron-up" @click = "toggleElement"></b-icon>
+          </p>
+          <p>+373 67 155 155 </p>
+          <p class = "clock">
+            <b-icon icon = "clock" font-scale = "2"></b-icon>
+            ПН-ПТ: 9.00-19.00 <br>СБ-ВС: 10.00-18.00
+          </p>
+        </div>
       </div>
-      <div class = "d-flex col-lg-1 language-content justify-content-end">
-        <div class = "language">
-          <div class = "language-ro">
+      <div class = "col-lg-1 col-md-2 col-sm-2 language-content">
+        <div class = "language" id = "lang">
+          <div class = "language-ro" id = "lang-ro" @click = "activate(1)" :class = "{active: active_el === 1}">
             RO
           </div>
-          <div class = "language-ru">
+          <div class = "language-ru" id = "lang-ru" @click = "activate(2)" :class = "{active: active_el === 2}">
             RU
           </div>
         </div>
@@ -75,9 +87,25 @@ import IconUser from "@/icons/IconUser.vue";
 export default {
   name: 'HeaderContent',
   components: {IconUser, IconShoppingBag, IconHeart, HamburgerMenu, IconLogo},
-
+  el: "#lang",
+  data() {
+    return {
+      active_el: 1,
+      isElVisible: false
+    }
+  },
+  methods: {
+    toggleElement() {
+      this.isElVisible = !this.isElVisible
+    },
+    activate: function (el) {
+      this.active_el = el;
+    }
+  }
 }
+
 </script>
+
 <style>
 
 .product-bar-item{
@@ -98,6 +126,7 @@ export default {
   box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.25);
 }
 * {
+  font-family: 'Roboto', sans-serif;
   padding: 0;
   margin: 0;
   box-sizing: border-box;
@@ -113,21 +142,42 @@ export default {
 }
 
 .address {
-  font-family: 'Roboto', sans-serif;
   font-weight: 600;
   font-size: 12px;
-  line-height: 15px;
-  letter-spacing: 0.068em;
+  letter-spacing: 0.07em;
   color: #000000;
 }
 
 .phone {
-  font-family: 'Roboto', sans-serif;
+  display: flex;
+  justify-content: center;
+  text-align: center;
   font-weight: 600;
   font-size: 14px;
   line-height: 17px;
-  letter-spacing: 0.068em;
+  letter-spacing: 0.07em;
   color: #000000;
+}
+
+.phone-active {
+  padding: 15px 0;
+  z-index: 1;
+  position: absolute;
+  width: 215px;
+  height: 130px;
+  background: #F7F7F7;
+  box-shadow: 0 2px 2px rgba(0, 0, 0, 0.25);
+  border-radius: 12px;
+}
+
+.clock {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.language-content {
+  padding: 0;
 }
 
 .language {
@@ -137,22 +187,22 @@ export default {
   font-weight: 600;
   font-size: 14px;
   color: #000000;
-  background: rgba(0, 0, 0, .1);
-  border-radius: 5px;
-  width: 56px;
+  background: rgba(229, 229, 229, .6);
+  border-radius: 6px;
+  width: 64px;
+  box-shadow: 0 2px 2px gray;
 }
 
-.language-ru {
-  width: 25px;
+.active {
   color: #000000;
-  background: rgba(0, 0, 0, .3);
-  border-radius: 4px;
-  text-align: center;
+  background: rgba(217, 217, 217, .9);
+  border-radius: 6px;
 }
 
-.language-ro {
-  width: 25px;
+.language-ro, .language-ru {
+  width: 32px;
   text-align: center;
+  cursor: pointer;
 }
 
 .language-content {
