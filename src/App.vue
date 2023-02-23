@@ -1,13 +1,18 @@
 <template>
-  <Header/>
+  <div>
+    <Header/>
+    <FooterContent/>
+  </div>
 </template>
 
 <script>
 
 import Header from "@/components/HeaderContent";
+import FooterContent from "@/components/FooterContent";
+
 export default {
   name: 'App',
-  components: {Header},
+  components: {Header, FooterContent},
 }
 </script>
 
