@@ -1,6 +1,7 @@
 <template>
   <div>
-    <Header/>
+    <Header />
+    <FeedBack />
     <FooterContent/>
   </div>
 </template>
@@ -9,10 +10,11 @@
 
 import Header from "@/components/HeaderContent";
 import FooterContent from "@/components/FooterContent";
+import FeedBack from "./components/FeedBack"
 
 export default {
   name: 'App',
-  components: {Header, FooterContent},
+  components: {Header, FeedBack, FooterContent},
 }
 </script>
 

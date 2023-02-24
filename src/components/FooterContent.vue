@@ -14,9 +14,9 @@
         Мы в социальных сетях
       </div>
       <div class = "col-lg-2 offset-lg-5 d-flex justify-content-center gap-4 mt-4">
-        <b-icon icon = "facebook" scale = "2" role="button"></b-icon>
-        <b-icon icon = "youtube" scale = "2" role="button"></b-icon>
-        <b-icon icon = "instagram" scale = "2" role="button"></b-icon>
+        <b-icon icon = "facebook" scale = "2" role = "button"></b-icon>
+        <b-icon icon = "youtube" scale = "2" role = "button"></b-icon>
+        <b-icon icon = "instagram" scale = "2" role = "button"></b-icon>
       </div>
       <div class = "col-lg-10 offset-lg-1 d-flex mt-4 justify-content-between">
         <div class = "info-box-copyright">
@@ -25,9 +25,9 @@
         <div class = "info-box-policy">
           Политика конфиденциальности.
         </div>
-        <div class="d-flex gap-4">
-            <VisaIcon />
-            <MasterCardIcon />
+        <div class = "d-flex gap-4">
+          <VisaIcon/>
+          <MasterCardIcon/>
         </div>
       </div>
     </div>
@@ -37,6 +37,7 @@
 <script>
 import VisaIcon from "../icons/VisaIcon"
 import MasterCardIcon from "../icons/MasterCardIcon"
+
 export default {
   name: "FooterContent",
   components: {VisaIcon, MasterCardIcon}
