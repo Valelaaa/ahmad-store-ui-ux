@@ -29,7 +29,7 @@
     </div>
     <b-navbar toggleable = "lg" type = "dark" class = "bg-white row" variant = "info">
 
-      <div class = "col-lg-1 col-md-2 ml-5">
+      <div class = "col-lg-1 col-md-2">
 
         <b-navbar-brand href = "#">
           <IconLogo/>
@@ -153,6 +153,7 @@ export default {
       el: "#lang",
       isElVisible: false,
       isHamVisible: false,
+
     }
   },
   methods: {
