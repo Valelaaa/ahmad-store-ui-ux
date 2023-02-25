@@ -13,7 +13,7 @@
       <div class = "col-lg-4 offset-lg-4 info-box-item">
         Мы в социальных сетях
       </div>
-      <div class = "col-lg-2 offset-lg-5 d-flex justify-content-center gap-4 mt-4">
+      <div class = "col-lg-2 offset-lg-5 d-flex justify-content-center icons mt-4">
         <b-icon icon = "facebook" scale = "2" role = "button"></b-icon>
         <b-icon icon = "youtube" scale = "2" role = "button"></b-icon>
         <b-icon icon = "instagram" scale = "2" role = "button"></b-icon>
@@ -25,7 +25,7 @@
         <div class = "info-box-policy">
           Политика конфиденциальности.
         </div>
-        <div class = "d-flex gap-4">
+        <div class = "d-flex icons">
           <VisaIcon/>
           <MasterCardIcon/>
         </div>
@@ -87,5 +87,7 @@ export default {
   font-size: 14px;
   letter-spacing: 0.068em;
 }
-
+.icons{
+  gap: 40px;
+}
 </style>
