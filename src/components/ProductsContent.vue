@@ -4,9 +4,9 @@
     <div class = "my-carousel">
       <VueSlickCarousel :arrows = "true" class = "carousel" v-bind = "settings">
         <div class = "item">
-          <img alt = "tea" src = "@/images/item1.png">
+          <img alt = "tea" src = "@/images/item1.webp">
           <div class = "item-info">English Breakfast Tea
-            <div class = "d-flex flex-row gap-5">
+            <div class = "text-al d-flex flex-row">
               <div class = "item-price"><span class = "real-price">39.90 MDL</span><span
                   class = "price"><s>&nbsp;44.90 MDL</s></span></div>
               <IconShop/>
@@ -14,9 +14,9 @@
           </div>
         </div>
         <div class = "item">
-          <img alt = "tea" src = "@/images/item2.png">
+          <img alt = "tea" src = "@/images/item2.webp">
           <div class = "item-info">Cinnamon Haze Tea
-            <div class = "d-flex flex-row gap-5">
+            <div class = "text-al d-flex flex-row">
               <div class = "item-price"><span class = "real-price">36.50 MDL</span><span
                   class = "price"><s>&nbsp;39.90 MDL</s></span></div>
               <IconShop/>
@@ -24,9 +24,9 @@
           </div>
         </div>
         <div class = "item">
-          <img alt = "tea" src = "@/images/item3.png">
+          <img alt = "tea" src = "@/images/item3.webp">
           <div class = "item-info">Vanilla Tranquillity Tea
-            <div class = "d-flex flex-row gap-5">
+            <div class = "text-al d-flex flex-row">
               <div class = "item-price"><span class = "real-price">37.90 MDL</span><span
                   class = "price"><s>&nbsp;41.90 MDL</s></span></div>
               <IconShop/>
@@ -34,9 +34,9 @@
           </div>
         </div>
         <div class = "item">
-          <img alt = "tea" src = "@/images/item4.png">
+          <img alt = "tea" src = "@/images/item4.webp">
           <div class = "item-info">Winter Charm Infusion
-            <div class = "d-flex flex-row gap-5">
+            <div class = "text-al d-flex flex-row">
               <div class = "item-price"><span class = "real-price">40.90 MDL</span><span
                   class = "price"><s>&nbsp;48.80 MDL</s></span></div>
               <IconShop/>
@@ -44,9 +44,9 @@
           </div>
         </div>
         <div class = "item">
-          <img alt = "tea" src = "@/images/item2.png">
+          <img alt = "tea" src = "@/images/item2.webp">
           <div class = "item-info">Cinnamon Haze Tea
-            <div class = "d-flex flex-row gap-5">
+            <div class = "text-al d-flex flex-row">
               <div class = "item-price"><span class = "real-price">36.50 MDL</span><span
                   class = "price"><s>&nbsp;39.90 MDL</s></span></div>
               <IconShop/>
@@ -134,6 +134,10 @@ img {
 .item-price {
   display: flex;
   flex-direction: column;
+}
+.text-al {
+  margin-top: 10px;
+  gap: 30px;
 }
 
 </style>
