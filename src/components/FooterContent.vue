@@ -1,5 +1,5 @@
 <template>
-  <footer class = "footer container">
+  <footer class = "container footer">
     <div class = "row">
       <div class = "col-lg-8 offset-lg-2">
         <ul class = "info-box">
@@ -56,8 +56,9 @@ export default {
 }
 
 .footer {
-  max-height: 210px;
+  min-height: 210px;
   color: gray;
+  padding-bottom: 13px;
 }
 
 .info-box {
