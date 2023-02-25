@@ -37,7 +37,7 @@
 
       </div>
 
-      <div class = "col-lg-2 col-md-2 col-sm-2">
+      <div class = "col-lg-3 col-md-3 col-sm-2">
         <b-button class = all-categories  @click = "toggleHamMenu">
           <IconHamburgerMenu />
           <span class = "categories">ВСЕ КАТЕГОРИИ</span>
@@ -105,7 +105,7 @@
         </div>
       </div>
 
-      <div class = "d-flex col-lg-7 col-md-5 search-input justify-content-center align-items-center">
+      <div class = "d-flex col-lg-6 col-md-5 search-input justify-content-center align-items-center">
         <b-icon class = "search-bar search-bar-icon" icon = "search"></b-icon>
         <b-form-input  class = "bg-transparent searchingField no-clear" type = "search" placeholder = "Поиск в магазине" :no-animation = "true" />
       </div>

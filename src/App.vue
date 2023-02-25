@@ -3,8 +3,9 @@
     <Header/>
     <SliderContent/>
     <ProductsContent title = "АКЦИИ"/>
-    <OurBlog/>
+    <AboutUsComponent/>
     <ProductsContent title = "ПОПУЛЯРНЫЕ ТОВАРЫ"/>
+    <OurBlog/>
     <FeedBack/>
 
     <FooterContent/>
@@ -19,10 +20,11 @@ import FeedBack from "./components/FeedBack"
 import SliderContent from "@/components/SliderContent.vue";
 import ProductsContent from "@/components/ProductsContent";
 import OurBlog from "@/components/OurBlog";
+import AboutUsComponent from "@/components/AboutUsComponent.vue";
 
 export default {
   name: 'App',
-  components: {SliderContent, ProductsContent, OurBlog, Header, FeedBack, FooterContent},
+  components: {AboutUsComponent, SliderContent, ProductsContent, OurBlog, Header, FeedBack, FooterContent},
 }
 </script>
 
