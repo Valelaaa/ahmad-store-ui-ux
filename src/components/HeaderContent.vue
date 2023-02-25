@@ -181,7 +181,10 @@ export default {
   line-height: 20px;
   text-transform: uppercase;
   letter-spacing: 0.068em;
-
+  height: 30px;
+  display:flex;
+  justify-content: center;
+  align-items: center;
   color: var(--bs-text-color);
 }
 
@@ -203,7 +206,8 @@ p {
 }
 
 .header {
-  padding: 20px 0;
+  padding-top: 20px;
+
 }
 
 .info {
