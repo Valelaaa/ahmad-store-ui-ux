@@ -28,39 +28,99 @@
       </div>
     </div>
     <b-navbar toggleable = "lg" type = "dark" class = "bg-white row" variant = "info">
+
       <div class = "col-lg-1 col-md-2 ml-5">
+
         <b-navbar-brand href = "#">
           <IconLogo/>
         </b-navbar-brand>
+
       </div>
 
       <div class = "col-lg-2 col-md-2 col-sm-2">
-        <a class = "all-categories" href = "#">
-          <HamburgerMenu/>
+        <b-button class = all-categories  @click = "toggleHamMenu">
+          <IconHamburgerMenu />
           <span class = "categories">ВСЕ КАТЕГОРИИ</span>
-        </a>
+        </b-button>
+        <div class = "ham-menu-main d-flex" v-if = "isHamVisible">
+          <div class = "ham-menu" id = "ham_item">
+
+            <div class = "row ham-item-border">
+              <div style="margin-top:20px" class = "ham-item">
+<!--                <b-button-reset class="category-item-button" id = "ham_promotions" >-->
+                  <a class = "ham-item-text" >
+                    акции
+                  </a>
+<!--                </b-button-reset>-->
+              </div>
+            </div>
+            <div class = "row ham-item-border">
+              <div class = "ham-item">
+<!--                <b-button-reset class="category-item-button" id = "ham_ahmad_tea" >-->
+                  <a class = "ham-item-text">
+                    ahmad tea
+                  </a>
+<!--                </b-button-reset>-->
+              </div>
+            </div>
+            <div class = "row ham-item-border">
+              <div class = "ham-item">
+<!--                <b-button-reset class="category-item-button" id = "ham_voda" >-->
+                  <a class = "ham-item-text">
+                    morshynska
+                  </a>
+<!--                </b-button-reset>-->
+              </div>
+            </div>
+            <div class = "row ham-item-border">
+              <div class = "ham-item">
+<!--                <b-button-reset class="category-item-button" id = "ham_pepsico">-->
+                  <a class = "ham-item-text">
+                    pepsico
+                  </a>
+<!--                </b-button-reset>-->
+              </div>
+            </div>
+            <div class = "row ham-item-border">
+              <div class = "ham-item">
+<!--                <b-button-reset class="category-item-button" id = "ham_red_bull" >-->
+                  <a class = "ham-item-text">
+                    red bull
+                  </a>
+<!--                </b-button-reset>-->
+              </div>
+            </div>
+
+          </div>
+          <div class="ham-menu-secondary bg-white">
+            <ul>
+
+
+<!--              ТУТ БУДЕТ СПИСОК      -->
+
+
+            </ul>
+        </div>
+<!--          <div class="">{{hamItemList}}</div>-->
+        </div>
       </div>
 
-      <!--        <div class = "d-flex col-lg-6 col-md-5 search-input justify-content-center align-items-center">-->
       <div class = "d-flex col-lg-7 col-md-5 search-input justify-content-center align-items-center">
-
         <b-icon class = "search-bar search-bar-icon" icon = "search"></b-icon>
-        <b-form-input v-model = "searchQuery" class = "bg-transparent searchingField no-clear" type = "search"
-                      placeholder = "Поиск в магазине" :no-animation = "true"/>
-
+        <b-form-input  class = "bg-transparent searchingField no-clear" type = "search" placeholder = "Поиск в магазине" :no-animation = "true" />
       </div>
-      <!--        <div class = "d-flex col-3 justify-content-end">-->
+
       <div class = "d-flex col-2 justify-content-end">
         <a class = "navbar-items" href = "/">
-          <IconUser/>
+          <IconUser />
         </a>
 
         <a class = "navbar-items" href = "/">
-          <IconHeart/>
+          <IconHeart />
         </a>
 
         <a class = "navbar-items" href = "/">
-          <IconShoppingBag/>
+          <IconShoppingBag />
         </a>
       </div>
     </b-navbar>
@@ -79,19 +139,20 @@
 
 <script>
 import IconLogo from "@/icons/IconLogo.vue";
-import HamburgerMenu from "@/icons/HamburgerMenu.vue";
+import IconHamburgerMenu from "@/icons/HamburgerMenuIcon.vue";
 import IconHeart from "@/icons/IconHeart.vue";
 import IconShoppingBag from "@/icons/IconShoppingBag.vue";
 import IconUser from "@/icons/IconUser.vue";
 
 export default {
   name: 'HeaderContent',
-  components: {IconUser, IconShoppingBag, IconHeart, HamburgerMenu, IconLogo},
+  components: {IconUser, IconShoppingBag, IconHeart, IconHamburgerMenu, IconLogo},
   data() {
     return {
       active_el: 1,
       el: "#lang",
-      isElVisible: false
+      isElVisible: false,
+      isHamVisible: false,
     }
   },
   methods: {
@@ -100,14 +161,17 @@ export default {
     },
     activate: function (el) {
       this.active_el = el;
-    }
+    },
+    toggleHamMenu() {
+      this.isHamVisible = !this.isHamVisible
+    },
   }
 }
-
 </script>
-
 <style>
-
+:root {
+  --bs-text-color: black;
+}
 .product-bar-item {
   font-family: 'Roboto', sans-serif;
   font-style: normal;
@@ -116,12 +180,13 @@ export default {
   line-height: 20px;
   text-transform: uppercase;
   letter-spacing: 0.068em;
-  color: #000000;
+
+  color: var(--bs-text-color);
 }
 
 .products_bar {
   background: rgba(217, 217, 217, 0.26);
-  box-shadow: 0 2px 2px rgba(0, 0, 0, 0.25);
+  box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.25);
 }
 
 * {
@@ -129,6 +194,7 @@ export default {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+  color: var(--bs-text-color);
 }
 
 p {
@@ -148,7 +214,6 @@ p {
   font-weight: 600;
   font-size: 12px;
   letter-spacing: 0.07em;
-  color: #000000;
 }
 
 .phone {
@@ -159,7 +224,6 @@ p {
   font-size: 14px;
   line-height: 17px;
   letter-spacing: 0.07em;
-  color: #000000;
 }
 
 .phone-active {
@@ -184,12 +248,10 @@ p {
 }
 
 .language {
-  font-family: 'Roboto', sans-serif;
   display: flex;
   justify-content: end;
   font-weight: 600;
   font-size: 14px;
-  color: #000000;
   background: rgba(229, 229, 229, .6);
   border-radius: 6px;
   width: 64px;
@@ -197,7 +259,6 @@ p {
 }
 
 .active {
-  color: #000000;
   background: rgba(217, 217, 217, .9);
   border-radius: 6px;
 }
@@ -214,12 +275,13 @@ p {
 }
 
 .all-categories {
+  background-color: transparent !important;
+  border: none !important;
   text-decoration: none;
-  color: black;
+  box-shadow: none !important;
 }
 
 .categories {
-  font-family: 'Roboto', sans-serif;
   padding-left: 10px;
   font-style: normal;
   font-weight: 600;
@@ -227,8 +289,6 @@ p {
   line-height: 20px;
   /* identical to box height */
   letter-spacing: 0.068em;
-
-  color: #000000;
 }
 
 .navbar-items {
@@ -236,7 +296,6 @@ p {
 }
 
 .search-input {
-
   filter: drop-shadow(0px 2px 2px rgba(0, 0, 0, 0.25));
   background: #D9D9D9;
   opacity: 0.6;
@@ -262,4 +321,61 @@ div .searchingField:focus,
   box-shadow: none !important;
   border-color: transparent !important;
 }
+
+.ham-menu {
+  background: white;
+  width: 395px;
+  height: 450px;
+}
+
+.ham-item {
+  display: flex;
+  height: 70px;
+  align-items: center;
+  padding: 0 !important;
+}
+
+.ham-item:hover {
+  box-shadow: 0.840042px 0.840042px 2.10011px 2.10011px rgba(0, 0, 0, 0.25);
+}
+
+.ham-item-text {
+  font-style: normal;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 129.4%;
+  /* or 27px */
+  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+  letter-spacing: 0.128em;
+  margin-left: 108px;
+  text-decoration: none;
+  color: var(--bs-text-color)
+}
+
+.ham-item-border {
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+.ham-item-text:hover {
+  font-weight: bold;
+  color: var(--bs-text-color)
+}
+
+.ham-menu-main {
+  position: absolute;
+  z-index: 1;
+  margin-top: 20px;
+  width:1050px;
+  background: white;
+  border-radius: 0px 0px 17px 17px;
+  box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.25);
+  transition: opacity 0.5s ease-in-out;
+}
+.ham-menu-main.show {
+  opacity: 1;
+}
+
 </style>
