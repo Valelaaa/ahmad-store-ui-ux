@@ -1,6 +1,6 @@
 <template>
   <div>
-    <Header/>
+    <HeaderContent/>
     <SliderContent/>
     <ProductsContent title = "АКЦИИ"/>
     <AboutUsComponent/>
@@ -14,7 +14,7 @@
 
 <script>
 
-import Header from "@/components/HeaderContent";
+import HeaderContent from "@/components/HeaderContent";
 import FooterContent from "@/components/FooterContent";
 import FeedBack from "./components/FeedBack"
 import SliderContent from "@/components/SliderContent.vue";
@@ -24,7 +24,7 @@ import AboutUsComponent from "@/components/AboutUsComponent.vue";
 
 export default {
   name: 'App',
-  components: {AboutUsComponent, SliderContent, ProductsContent, OurBlog, Header, FeedBack, FooterContent},
+  components: {AboutUsComponent, SliderContent, ProductsContent, OurBlog, HeaderContent, FeedBack, FooterContent},
 }
 </script>
 
