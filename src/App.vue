@@ -1,7 +1,7 @@
 <template>
   <div>
-    <Header />
-    <FeedBack />
+    <Header/>
+    <FeedBack/>
     <FooterContent/>
   </div>
 </template>

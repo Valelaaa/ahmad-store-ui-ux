@@ -87,10 +87,10 @@ import IconUser from "@/icons/IconUser.vue";
 export default {
   name: 'HeaderContent',
   components: {IconUser, IconShoppingBag, IconHeart, HamburgerMenu, IconLogo},
-  el: "#lang",
   data() {
     return {
       active_el: 1,
+      el: "#lang",
       isElVisible: false
     }
   },
