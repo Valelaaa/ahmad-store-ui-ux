@@ -31,7 +31,7 @@
 
       <div class = "col-lg-1 col-md-2">
 
-        <b-navbar-brand href = "#">
+        <b-navbar-brand href = "/home">
           <IconLogo/>
         </b-navbar-brand>
 
@@ -340,7 +340,7 @@ div .searchingField:focus,
   padding: 0 !important;
 }
 
-.ham-item:hover {
+.ham-item-border:hover {
   box-shadow: 0.840042px 0.840042px 2.10011px 2.10011px rgba(0, 0, 0, 0.25);
 }
 

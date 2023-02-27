@@ -3,10 +3,10 @@
     <div class = "row">
       <div class = "col-lg-8 offset-lg-2">
         <ul class = "info-box">
-          <li><a href = "#" class = "info-box-item">О Нас</a></li>
+          <li><a href = "/#/about" class = "info-box-item">О Нас</a></li>
           <li><a href = "#" class = "info-box-item">Акции</a></li>
-          <li><a href = "#" class = "info-box-item">Новости</a></li>
-          <li><a href = "#" class = "info-box-item">Доставка и оплата</a></li>
+          <li><a href = "/#/news" class = "info-box-item">Новости</a></li>
+          <li><a href = "/#/payment-shipping" class = "info-box-item">Доставка и оплата</a></li>
           <li><a href = "#" class = "info-box-item">Контакты</a></li>
         </ul>
       </div>
