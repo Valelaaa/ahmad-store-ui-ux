@@ -1,54 +1,14 @@
 <template>
   <section class = "container sales-content">
-    <h2>{{title}}</h2>
+    <h2>{{ title }}</h2>
     <div class = "my-carousel">
-      <VueSlickCarousel :arrows = "true" class = "carousel" v-bind = "settings">
-        <div class = "item">
-          <img alt = "tea" src = "@/images/item1.webp">
-          <div class = "item-info">English Breakfast Tea
+      <VueSlickCarousel :arrows = "true" :slidesToScroll = "1" :slidesToShow = "4" class = "carousel">
+        <div v-for = "product in Products" :key = "product.id" class = "item">
+          <img alt = "tea" :src = "require(`@/images/${product.image}.webp`)">
+          <div class = "item-info">{{ product.title }}
             <div class = "text-al d-flex flex-row">
-              <div class = "item-price"><span class = "real-price">39.90 MDL</span><span
-                  class = "price"><s>&nbsp;44.90 MDL</s></span></div>
-              <IconShop/>
-            </div>
-          </div>
-        </div>
-        <div class = "item">
-          <img alt = "tea" src = "@/images/item2.webp">
-          <div class = "item-info">Cinnamon Haze Tea
-            <div class = "text-al d-flex flex-row">
-              <div class = "item-price"><span class = "real-price">36.50 MDL</span><span
-                  class = "price"><s>&nbsp;39.90 MDL</s></span></div>
-              <IconShop/>
-            </div>
-          </div>
-        </div>
-        <div class = "item">
-          <img alt = "tea" src = "@/images/item3.webp">
-          <div class = "item-info">Vanilla Tranquillity Tea
-            <div class = "text-al d-flex flex-row">
-              <div class = "item-price"><span class = "real-price">37.90 MDL</span><span
-                  class = "price"><s>&nbsp;41.90 MDL</s></span></div>
-              <IconShop/>
-            </div>
-          </div>
-        </div>
-        <div class = "item">
-          <img alt = "tea" src = "@/images/item4.webp">
-          <div class = "item-info">Winter Charm Infusion
-            <div class = "text-al d-flex flex-row">
-              <div class = "item-price"><span class = "real-price">40.90 MDL</span><span
-                  class = "price"><s>&nbsp;48.80 MDL</s></span></div>
-              <IconShop/>
-            </div>
-          </div>
-        </div>
-        <div class = "item">
-          <img alt = "tea" src = "@/images/item2.webp">
-          <div class = "item-info">Cinnamon Haze Tea
-            <div class = "text-al d-flex flex-row">
-              <div class = "item-price"><span class = "real-price">36.50 MDL</span><span
-                  class = "price"><s>&nbsp;39.90 MDL</s></span></div>
+              <div class = "item-price"><span class = "real-price">{{ product.price }}</span><span class = "price"><s>&nbsp;{{ product.old_price }}</s></span>
+              </div>
               <IconShop/>
             </div>
           </div>
@@ -62,21 +22,52 @@
 import VueSlickCarousel from 'vue-slick-carousel'
 import IconShop from '@/icons/IconShop'
 import 'vue-slick-carousel/dist/vue-slick-carousel.css'
-// optional style for arrows & dots
 import 'vue-slick-carousel/dist/vue-slick-carousel-theme.css'
 
 export default {
   name: 'ProductsContent',
   components: {VueSlickCarousel, IconShop},
   data: () => ({
-    settings: {
-      "slidesToShow": 4,
-      "slidesToScroll": 1,
-    }
+    Products: [{
+      id: 1,
+      title: "English Breakfast Tea",
+      image: "item1",
+      price: "39.90 MDL",
+      old_price: "44.90 MDL"
+    },
+    {
+      id: 2,
+      title: "Cinnamon Haze Tea",
+      image: "item2",
+      price: "36.50 MDL",
+      old_price: "39.90 MDL"
+    },
+    {
+      id: 3,
+      title: "Vanilla Tranquillity Tea",
+      image: "item3",
+      price: "37.90 MDL",
+      old_price: "41.90 MDL"
+    },
+    {
+      id: 4,
+      title: "Winter Charm Infusion",
+      image: "item4",
+      price: "40.90 MDL",
+      old_price: "48.80 MDL"
+    },
+    {
+      id: 5,
+      title: "Cinnamon Haze Tea",
+      image: "item2",
+      price: "36.50 MDL",
+      old_price: "39.90 MDL"
+    },
+    ]
   }),
-  props:{
+  props: {
     title: String
-  }
+  },
 }
 
 </script>
@@ -93,9 +84,11 @@ export default {
   line-height: 15px;
   letter-spacing: 0.068em;
 }
+
 .sales-content {
   padding: 30px 0 60px 0;
 }
+
 h2 {
   font-weight: 700;
   font-size: 21px;
@@ -104,6 +97,7 @@ h2 {
   color: #000000;
   margin-left: 100px;
 }
+
 img {
   display: block;
   margin: auto;
@@ -135,6 +129,7 @@ img {
   display: flex;
   flex-direction: column;
 }
+
 .text-al {
   margin-top: 10px;
   gap: 30px;
