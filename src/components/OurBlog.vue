@@ -2,55 +2,13 @@
   <article class = "container blog">
     <h2 class = "blog-title">НАШ БЛОГ</h2>
     <VueSlickCarousel :arrows = "true" class = "carousel" v-bind = "settings">
-      <div class = "item">
+      <div class = "item" v-for="blog in Blogs" :key="blog.id">
         <div class = "item-width">
           <div class = "wrapper">
-            <img alt = "blog" src = "@/images/blog1.webp">
+            <img alt = "blog" :src = "require(`@/images/${blog.img}.webp`)">
             <div class = "text-wrapper">
-              <b>Секреты Maple Syrup: чая с ароматом кленового сиропа</b>
-              <div><br>Чай Ahmad Tea Maple Syrup производится на основе классического китайского зеленого чая</div>
-            </div>
-            <div class="d-flex justify-content-end btn-left">
-              <button class = "read-btn">Читать</button>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class = "item">
-        <div class = "item-width">
-          <div class = "wrapper">
-            <img alt = "blog" src = "@/images/blog2.webp">
-            <div class = "text-wrapper">
-              <b>Секреты Maple Syrup: чая с ароматом кленового сиропа</b>
-              <div><br>Чай Ahmad Tea Maple Syrup производится на основе классического китайского зеленого чая</div>
-            </div>
-            <div class="d-flex justify-content-end btn-left">
-              <button class = "read-btn">Читать</button>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class = "item">
-        <div class = "item-width">
-          <div class = "wrapper">
-            <img alt = "blog" src = "@/images/blog3.webp">
-            <div class = "text-wrapper">
-              <b>Секреты Maple Syrup: чая с ароматом кленового сиропа</b>
-              <div><br>Чай Ahmad Tea Maple Syrup производится на основе классического китайского зеленого чая</div>
-            </div>
-            <div class="d-flex justify-content-end btn-left">
-              <button class = "read-btn">Читать</button>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class = "item">
-        <div class = "item-width">
-          <div class = "wrapper">
-            <img alt = "blog" src = "@/images/blog2.webp">
-            <div class = "text-wrapper">
-              <b>Секреты Maple Syrup: чая с ароматом кленового сиропа</b>
-              <div><br>Чай Ahmad Tea Maple Syrup производится на основе классического китайского зеленого чая</div>
+              <b>{{blog.title}}</b>
+              <div><br>{{blog.description}}</div>
             </div>
             <div class="d-flex justify-content-end btn-left">
               <button class = "read-btn">Читать</button>
@@ -72,7 +30,32 @@ export default {
     settings: {
       "slidesToShow": 3,
       "slidesToScroll": 1,
+    },
+    Blogs: [{
+      id: 1,
+      title: "Секреты Maple Syrup: чая с ароматом кленового сиропа",
+      img: "blog1",
+      description: "Чай Ahmad Tea Maple Syrup производится на основе классического китайского зеленого чая"
+    },
+    {
+      id: 2,
+      title: "Секреты Maple Syrup: чая с ароматом кленового сиропа",
+      img: "blog2",
+      description: "Чай Ahmad Tea Maple Syrup производится на основе классического китайского зеленого чая"
+    },
+    {
+      id: 3,
+      title: "Секреты Maple Syrup: чая с ароматом кленового сиропа",
+      img: "blog3",
+      description: "Чай Ahmad Tea Maple Syrup производится на основе классического китайского зеленого чая"
+    },
+    {
+      id: 4,
+      title: "Секреты Maple Syrup: чая с ароматом кленового сиропа",
+      img: "blog2",
+      description: "Чай Ahmad Tea Maple Syrup производится на основе классического китайского зеленого чая"
     }
+      ]
   }),
 }
 </script>
