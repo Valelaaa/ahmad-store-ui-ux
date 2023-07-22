@@ -1,6 +1,6 @@
 # Welcome to Ahmad Store!
 
-<div align="center"><img width="960" alt="main" src="https://github.com/Valelaaa/Web_lab_project/assets/78920421/a721b357-55e1-4a2e-99be-ef07bf5d115d"></div>
+<div align="center"><img width="960" alt="main" src="(https://github.com/Valelaaa/ahmad-store-ui-ux/assets/78920421/f82ae383-0ca9-4daa-8d81-ff896c8f0e6f)"></div>
 
 This is a web application for a shop that offers a variety of tea, water, and soft drink products. The project is built using JavaScript and Vue.js to create a responsive and interactive user interface.
 
